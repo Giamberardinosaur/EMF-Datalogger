@@ -82,7 +82,7 @@ def plotRFHist(histData, filename=None):
         plt.show()
 
 
-dir = "./logs"     # Directory to search for logfiles
+dir = "../EMFDatalogger/logs"     # Directory to search for logfiles
 
 day = '2021-07-30' # Day to search for YYYY-DD-MM format
 start = '12:57'    # Start time to slice - 24H MM:HH format
