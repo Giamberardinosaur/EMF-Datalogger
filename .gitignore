@@ -1,2 +1,6 @@
 /SortedData
 /EMFDatalogger/logs
+/EMFDatalogger/__pycache__
+/.venv
+/build
+EMFDataLogger.spec
