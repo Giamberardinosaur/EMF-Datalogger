@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1360</width>
+    <height>705</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Spectrum Analyzer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string>Options</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QFrame" name="configControls">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QFormLayout" name="formLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Radio Module:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="moduleSelector">
+             <item>
+              <property name="text">
+               <string>Main: 4.8-6.1 GHz</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Ext: 15-2700 MHz</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="8" column="0" colspan="2">
+            <widget class="QRadioButton" name="linearFreq">
+             <property name="text">
+              <string>Linear Frequency Step [Mhz]</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">freqStepGroup</string>
+             </attribute>
+            </widget>
+           </item>
+           <item row="10" column="0" colspan="2">
+            <widget class="QRadioButton" name="expFreq">
+             <property name="text">
+              <string>Exponential Frequency Step [%]</string>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">freqStepGroup</string>
+             </attribute>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>End Frequency [MHz]:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Start Frequency [MHz]:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QDoubleSpinBox" name="startFreqInput">
+             <property name="minimum">
+              <double>15.000000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>6100.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>100.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>4800.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QDoubleSpinBox" name="endFreqInput">
+             <property name="minimum">
+              <double>15.000000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>6100.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>100.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>6100.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Scan Time Per Step [s]:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QSpinBox" name="scanTimeInput">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>10000</number>
+             </property>
+             <property name="singleStep">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="1">
+            <widget class="QComboBox" name="freqStepSelectorExp">
+             <item>
+              <property name="text">
+               <string>5.00</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>2.00</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>1.00</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>0.50</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>0.20</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>0.05</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>0.02</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QComboBox" name="freqStepSelector">
+             <item>
+              <property name="text">
+               <string>6.000</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>3.000</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>1.000</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>0.500</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>0.100</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>0.050</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>0.020</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="estimatorText">
+             <property name="text">
+              <string>0 minutes, 0 seconds: 0000 data  points</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="crossCheckBox">
+             <property name="text">
+              <string>Show crosshair</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="logFreqBox">
+             <property name="text">
+              <string>Log Frequency Axis</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="startButton">
+             <property name="text">
+              <string>Start Scan</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="cancelButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Cancel Scan</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="errorMessage">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>0</green>
+                   <blue>0</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>255</red>
+                   <green>0</green>
+                   <blue>0</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="saveButton">
+             <property name="text">
+              <string>Save Scan as CSV</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="loadButton">
+             <property name="text">
+              <string>Load Scan from CSV...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBar">
+             <property name="value">
+              <number>0</number>
+             </property>
+             <property name="textVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+       <zorder>frame</zorder>
+       <zorder>configControls</zorder>
+       <zorder>verticalSpacer</zorder>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+         <horstretch>5</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string>Plots</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="SpectrumWidget" name="spectrumGraph" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1360</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SpectrumWidget</class>
+   <extends>QWidget</extends>
+   <header>spectrumwidget</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="freqStepGroup"/>
+ </buttongroups>
+</ui>
